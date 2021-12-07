@@ -13,21 +13,20 @@ const mongoose = require("mongoose");
 
 const UserSchema = mongoose.Schema({
 	displayName: {
-		type: String,
-		required: true
+		type: String
 	},
 	email: {
-		type: String,
-		required: true
-	},
-	password: {
-		type: String,
-		required: true
-	},
-	img: {
-		type: String,
-		required: false
+		type: String
 	}
+	// ,
+	// password: {
+	// 	type: String,
+	// 	required: true
+	// },
+	// img: {
+	// 	type: String,
+	// 	required: false
+	// }
 });
 
 module.exports = mongoose.model('Users', UserSchema);
