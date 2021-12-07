@@ -11,12 +11,12 @@ const cors = require("cors");
 
 const bodyParser = require("body-parser");
 
+app.use(cors());
 
 const uri =`mongodb+srv://${process.env.username}:${process.env.password}@cluster0.rv6z4.mongodb.net/users`;
 console.log(uri);
 
 
-//app.use(cors());
 
 app.use(bodyParser.json());
 
