@@ -5,15 +5,13 @@ const bodyParser = require("body-parser");
 require('dotenv/config');
 
 const app = express();
-
-
+app.use(bodyParser.json());
+app.use(express.json());
 
 const port=process.env.PORT || 3000;
 app.use(cors());
 const uri =`mongodb+srv://${process.env.username}:${process.env.password}@cluster0.rv6z4.mongodb.net/users`;
 console.log(uri);
-app.use(bodyParser.json());
-
 // Posts Route
 const usersRoute = require('./routes/users');
 app.use('/users',usersRoute);

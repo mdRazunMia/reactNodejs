@@ -3,8 +3,8 @@ const mongoose = require("mongoose");
 
 //Schema without validation
  const UserSchema = mongoose.Schema({
-	displayName: String,
 	email: String,
+	displayName: String
  });
 
   

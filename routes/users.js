@@ -19,8 +19,8 @@ router.post('/', async (req, res, next)=>{
 	//res.send(req.body.displayName);
 	//res.send(req.body.email);
 	 const user = new User({
-		 displayName: req.body.displayName,
-		 email: req.body.email
+		 email: req.body.email,
+		 displayName: req.body.displayName
 		// ,
 		// password: req.body.password,
 		// img: req.body.img
