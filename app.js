@@ -1,6 +1,9 @@
 const express = require("express");
 
 const app = express();
+require('dotenv/config');
+
+const port=process.env.PORT || 3000;
 
 const mongoose = require("mongoose");
 
@@ -9,8 +12,9 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 
 
+const uri =`mongodb+srv://${process.env.username}:${process.env.password}@cluster0.rv6z4.mongodb.net/users`;
+console.log(uri);
 
-require('dotenv/config');
 
 //app.use(cors());
 
@@ -33,10 +37,12 @@ app.get('/', (req,res)=>{
 
 
 
-mongoose.connect(process.env.DB_CONNECTIOn,
+mongoose.connect(uri,
 	()=>{
 		console.log('connected to database');
 	}
 );
 
-app.listen(3000);
+app.listen(port,()=>{
+	console.log("server is running in  port", port);
+});
