@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 
-//Schema withour validation
+//Schema without validation
 // const PostSchema = mongoose.Schema({
 // 	title: String,
 // 	description: String,
@@ -12,7 +12,7 @@ const mongoose = require("mongoose");
 //Schema with validation
 
 const UserSchema = mongoose.Schema({
-	name: {
+	displayName: {
 		type: String,
 		required: true
 	},
