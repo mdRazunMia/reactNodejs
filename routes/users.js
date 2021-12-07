@@ -19,9 +19,10 @@ router.post('/', async (req, res)=>{
 	// console.log(req.body);
 	 const user = new User({
 		name: req.body.name,
-		email: req.body.email,
-		password: req.body.password,
-		img: req.body.img
+		email: req.body.email
+		// ,
+		// password: req.body.password,
+		// img: req.body.img
 	});
 	 try{
 	 	const saveUser = await user.save();
@@ -63,15 +64,16 @@ router.patch('/:userId', async (req, res)=>{
 			{
 			$set:{
 					name: req.body.name, 
-					email: req.body.email,
-					password: req.body.password,
-					img: req.body.img
+					email: req.body.email
+					// ,
+					// password: req.body.password,
+					// img: req.body.img
 				}
 			}
 			);
 		res.json(updateUser);
 	}catch(err){
-
+		res.json({message: err});
 	}
 });
 module.exports = router;
