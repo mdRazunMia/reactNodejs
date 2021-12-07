@@ -15,11 +15,12 @@ router.get('/', async (req,res)=>{
 });
 
 //submit a post
-router.post('/', async (req, res)=>{
-	// console.log(req.body);
+router.post('/', async (req, res, next)=>{
+	//res.send(req.body.displayName);
+	//res.send(req.body.email);
 	 const user = new User({
-		name: req.body.name,
-		email: req.body.email
+		 displayName: req.body.displayName,
+		 email: req.body.email
 		// ,
 		// password: req.body.password,
 		// img: req.body.img
@@ -63,7 +64,7 @@ router.patch('/:userId', async (req, res)=>{
 			{_id: req.params.userId}, 
 			{
 			$set:{
-					name: req.body.name, 
+					displayName: req.body.displayName, 
 					email: req.body.email
 					// ,
 					// password: req.body.password,

@@ -2,22 +2,22 @@ const mongoose = require("mongoose");
 
 
 //Schema without validation
-// const PostSchema = mongoose.Schema({
-// 	title: String,
-// 	description: String,
-// });
+ const UserSchema = mongoose.Schema({
+	displayName: String,
+	email: String,
+ });
 
   
 
 //Schema with validation
 
-const UserSchema = mongoose.Schema({
-	displayName: {
-		type: String
-	},
-	email: {
-		type: String
-	}
+// const UserSchema = mongoose.Schema({
+// 	displayName: {
+// 		type: String
+// 	},
+// 	email: {
+// 		type: String
+	//}
 	// ,
 	// password: {
 	// 	type: String,
@@ -27,7 +27,7 @@ const UserSchema = mongoose.Schema({
 	// 	type: String,
 	// 	required: false
 	// }
-});
+//});
 
 module.exports = mongoose.model('Users', UserSchema);
 
